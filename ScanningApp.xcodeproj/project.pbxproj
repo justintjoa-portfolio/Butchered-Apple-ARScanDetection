@@ -29,7 +29,6 @@
 		C4543844207F38460016097A /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = C4543843207F38460016097A /* art.scnassets */; };
 		C45BF9CA208E11420070CB19 /* ViewController+NavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = C45BF9C9208E11420070CB19 /* ViewController+NavigationBar.swift */; };
 		C46B56342015D997001C41CE /* BoundingBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = C46B56332015D997001C41CE /* BoundingBox.swift */; };
-		C46B56372016079A001C41CE /* ShareScanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C46B56362016079A001C41CE /* ShareScanViewController.swift */; };
 		C46B563B20173523001C41CE /* ARCameraTrackingState.swift in Sources */ = {isa = PBXBuildFile; fileRef = C46B563A20173523001C41CE /* ARCameraTrackingState.swift */; };
 		C479BF2E201F2C790030C57A /* ViewController+Gestures.swift in Sources */ = {isa = PBXBuildFile; fileRef = C479BF2D201F2C790030C57A /* ViewController+Gestures.swift */; };
 		C47CE835207794880011A27B /* ObjectOriginAxis.swift in Sources */ = {isa = PBXBuildFile; fileRef = C47CE834207794880011A27B /* ObjectOriginAxis.swift */; };
@@ -69,7 +68,6 @@
 		C4543843207F38460016097A /* art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; name = art.scnassets; path = ScanningApp/art.scnassets; sourceTree = "<group>"; };
 		C45BF9C9208E11420070CB19 /* ViewController+NavigationBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ViewController+NavigationBar.swift"; sourceTree = "<group>"; };
 		C46B56332015D997001C41CE /* BoundingBox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoundingBox.swift; sourceTree = "<group>"; };
-		C46B56362016079A001C41CE /* ShareScanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareScanViewController.swift; sourceTree = "<group>"; };
 		C46B563A20173523001C41CE /* ARCameraTrackingState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ARCameraTrackingState.swift; sourceTree = "<group>"; };
 		C479BF2D201F2C790030C57A /* ViewController+Gestures.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ViewController+Gestures.swift"; sourceTree = "<group>"; };
 		C47CE834207794880011A27B /* ObjectOriginAxis.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectOriginAxis.swift; sourceTree = "<group>"; };
@@ -188,7 +186,6 @@
 				39D6E983207B1D05002CF536 /* ViewController+ApplicationState.swift */,
 				C45BF9C9208E11420070CB19 /* ViewController+NavigationBar.swift */,
 				C47D1E1620B3763C00DC3FDE /* ViewController+SessionInfo.swift */,
-				C46B56362016079A001C41CE /* ShareScanViewController.swift */,
 				390033F9206F15F700C61E5D /* Scan.swift */,
 				39D6E976207A8878002CF536 /* TestRun.swift */,
 			);
@@ -317,7 +314,6 @@
 				C4A938C5208799D3008D5D13 /* Tile.swift in Sources */,
 				C479BF2E201F2C790030C57A /* ViewController+Gestures.swift in Sources */,
 				395C994C200707A30025413C /* ViewController.swift in Sources */,
-				C46B56372016079A001C41CE /* ShareScanViewController.swift in Sources */,
 				395C9948200707A30025413C /* AppDelegate.swift in Sources */,
 				39D6E984207B1D05002CF536 /* ViewController+ApplicationState.swift in Sources */,
 				3947D4002076927E00BDBE95 /* Wireframe.swift in Sources */,

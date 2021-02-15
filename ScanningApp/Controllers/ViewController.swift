@@ -293,7 +293,7 @@ class ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegate, UI
         self.scan = nil
     }
     
-    func createAndShareReferenceObject() {
+    func createReferenceObject() {
         guard let testRun = self.testRun, let object = testRun.referenceObject, let name = object.name else {
             print("Error: Missing scanned object.")
             return
@@ -308,11 +308,7 @@ class ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegate, UI
                 fatalError("Failed to save the file to \(documentURL)")
             }
             
-            // Initiate a share sheet for the scanned object
-            let airdropShareSheet = ShareScanViewController(sourceView: self.nextButton, sharedObject: documentURL)
-            DispatchQueue.main.async {
-                self.present(airdropShareSheet, animated: true, completion: nil)
-            }
+
         }
     }
     
