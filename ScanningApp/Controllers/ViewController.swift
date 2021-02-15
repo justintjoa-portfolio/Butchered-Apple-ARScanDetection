@@ -21,10 +21,7 @@ class ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegate, UI
     @IBOutlet weak var nextButton: RoundedButton!
     var backButton: UIBarButtonItem!
     var mergeScanButton: UIBarButtonItem!
-    @IBOutlet weak var instructionView: UIVisualEffectView!
-    @IBOutlet weak var instructionLabel: MessageLabel!
     @IBOutlet weak var loadModelButton: RoundedButton!
-    @IBOutlet weak var flashlightButton: FlashlightButton!
     @IBOutlet weak var navigationBar: UINavigationBar!
     @IBOutlet weak var sessionInfoView: UIVisualEffectView!
     @IBOutlet weak var sessionInfoLabel: UILabel!
@@ -59,12 +56,7 @@ class ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegate, UI
         }
     }
     
-    var instructionsVisible: Bool = true {
-        didSet {
-            instructionView.isHidden = !instructionsVisible
-            toggleInstructionsButton.toggledOn = instructionsVisible
-        }
-    }
+
     
     // MARK: - Application Lifecycle
     
@@ -221,25 +213,15 @@ class ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegate, UI
         //  on the button that is currently visible at that location.
         if !loadModelButton.isHidden {
             loadModelButtonTapped(self)
-        } else if !flashlightButton.isHidden {
-            toggleFlashlightButtonTapped(self)
         }
     }
     
-    @IBAction func toggleFlashlightButtonTapped(_ sender: Any) {
-        guard !flashlightButton.isHidden && flashlightButton.isEnabled else { return }
-        flashlightButton.toggledOn = !flashlightButton.toggledOn
-    }
-    
+
     @IBAction func toggleInstructionsButtonTapped(_ sender: Any) {
         guard !toggleInstructionsButton.isHidden && toggleInstructionsButton.isEnabled else { return }
-        instructionsVisible.toggle()
     }
     
-    func displayInstruction(_ message: Message) {
-        instructionLabel.display(message)
-        instructionsVisible = true
-    }
+
     
     func documentPicker(_ controller: UIDocumentPickerViewController, didPickDocumentsAt urls: [URL]) {
         guard let url = urls.first else { return }
@@ -315,9 +297,6 @@ class ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegate, UI
         // 2. We encourage users to move the scanned object during testing, which invalidates
         //    the feature point cloud which was captured during scanning.
         self.scan = nil
-        self.displayInstruction(Message("""
-                    Test detection of the object from different angles. Consider moving the object to different environments and test there.
-                    """))
     }
     
     func createAndShareReferenceObject() {

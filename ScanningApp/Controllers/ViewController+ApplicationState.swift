@@ -71,11 +71,9 @@ extension ViewController {
                 testRun = nil
                 modelURL = nil
                 self.setNavigationBarTitle("")
-                instructionsVisible = false
                 showBackButton(false)
                 nextButton.isEnabled = false
                 loadModelButton.isHidden = true
-                flashlightButton.isHidden = true
                 
                 // Make sure the SCNScene is cleared of any SCNNodes from previous scans.
                 sceneView.scene = SCNScene()
@@ -91,11 +89,9 @@ extension ViewController {
                 testRun = nil
                 self.setNavigationBarTitle("")
                 loadModelButton.isHidden = true
-                flashlightButton.isHidden = true
                 showBackButton(false)
                 nextButton.isEnabled = false
                 nextButton.setTitle("Next", for: [])
-                displayInstruction(Message("Please wait for stable tracking"))
                 cancelMaxScanTimeTimer()
             case .scanning:
                 print("State: Scanning")
@@ -110,7 +106,6 @@ extension ViewController {
                 print("State: Testing")
                 self.setNavigationBarTitle("Test")
                 loadModelButton.isHidden = true
-                flashlightButton.isHidden = false
                 showMergeScanButton()
                 nextButton.isEnabled = true
                 nextButton.setTitle("Share", for: [])
@@ -139,27 +134,20 @@ extension ViewController {
                 self.showBackButton(false)
                 self.nextButton.setTitle("Next", for: [])
                 self.loadModelButton.isHidden = true
-                self.flashlightButton.isHidden = true
                 if scan.ghostBoundingBoxExists {
-                    self.displayInstruction(Message("Tap 'Next' to create an approximate bounding box around the object you want to scan."))
                     self.nextButton.isEnabled = true
                 } else {
-                    self.displayInstruction(Message("Point at a nearby object to scan."))
                     self.nextButton.isEnabled = false
                 }
             case .defineBoundingBox:
                 print("State: Define bounding box")
-                self.displayInstruction(Message("Position and resize bounding box using gestures.\n" +
-                    "Long press sides to push/pull them in or out. "))
+
                 self.setNavigationBarTitle("Define bounding box")
                 self.showBackButton(true)
                 self.nextButton.isEnabled = scan.boundingBoxExists
                 self.loadModelButton.isHidden = true
-                self.flashlightButton.isHidden = true
                 self.nextButton.setTitle("Scan", for: [])
             case .scanning:
-                self.displayInstruction(Message("Scan the object from all sides that you are " +
-                    "interested in. Do not move the object while scanning!"))
                 if let boundingBox = scan.scannedObject.boundingBox {
                     self.setNavigationBarTitle("Scan (\(boundingBox.progressPercentage)%)")
                 } else {
@@ -168,19 +156,15 @@ extension ViewController {
                 self.showBackButton(true)
                 self.nextButton.isEnabled = true
                 self.loadModelButton.isHidden = true
-                self.flashlightButton.isHidden = true
                 self.nextButton.setTitle("Finish", for: [])
                 // Disable plane detection (even if no plane has been found yet at this time) for performance reasons.
                 self.sceneView.stopPlaneDetection()
             case .adjustingOrigin:
                 print("State: Adjusting Origin")
-                self.displayInstruction(Message("Adjust origin using gestures.\n" +
-                    "You can load a *.usdz 3D model overlay."))
                 self.setNavigationBarTitle("Adjust origin")
                 self.showBackButton(true)
                 self.nextButton.isEnabled = true
                 self.loadModelButton.isHidden = false
-                self.flashlightButton.isHidden = true
                 self.nextButton.setTitle("Test", for: [])
             }
         }
@@ -241,7 +225,6 @@ extension ViewController {
         if let scan = scan, scan.state == .ready {
             DispatchQueue.main.async {
                 self.nextButton.isEnabled = true
-                self.displayInstruction(Message("Tap 'Next' to create an approximate bounding box around the object you want to scan."))
             }
         }
     }
@@ -251,7 +234,6 @@ extension ViewController {
         if let scan = scan, scan.state == .ready {
             DispatchQueue.main.async {
                 self.nextButton.isEnabled = false
-                self.displayInstruction(Message("Point at a nearby object to scan."))
             }
         }
     }
