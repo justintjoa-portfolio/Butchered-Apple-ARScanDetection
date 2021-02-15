@@ -89,10 +89,7 @@ class ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegate, UI
                                        name: ScannedObject.boundingBoxCreatedNotification, object: nil)
         notificationCenter.addObserver(self, selector: #selector(scanPercentageChanged),
                                        name: BoundingBox.scanPercentageChangedNotification, object: nil)
-        notificationCenter.addObserver(self, selector: #selector(boundingBoxPositionOrExtentChanged(_:)),
-                                       name: BoundingBox.extentChangedNotification, object: nil)
-        notificationCenter.addObserver(self, selector: #selector(boundingBoxPositionOrExtentChanged(_:)),
-                                       name: BoundingBox.positionChangedNotification, object: nil)
+
         notificationCenter.addObserver(self, selector: #selector(objectOriginPositionChanged(_:)),
                                        name: ObjectOrigin.positionChangedNotification, object: nil)
         notificationCenter.addObserver(self, selector: #selector(displayWarningIfInLowPowerMode),
@@ -536,17 +533,7 @@ class ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegate, UI
         }
     }
     
-    @objc
-    func boundingBoxPositionOrExtentChanged(_ notification: Notification) {
-        guard let box = notification.object as? BoundingBox,
-            let cameraPos = sceneView.pointOfView?.simdWorldPosition else { return }
-        
-        let xString = String(format: "width: %.2f", box.extent.x)
-        let yString = String(format: "height: %.2f", box.extent.y)
-        let zString = String(format: "length: %.2f", box.extent.z)
-        let distanceFromCamera = String(format: "%.2f m", distance(box.simdWorldPosition, cameraPos))
-        displayMessage("Current bounding box: \(distanceFromCamera) away\n\(xString) \(yString) \(zString)", expirationTime: 1.5)
-    }
+ 
     
     @objc
     func objectOriginPositionChanged(_ notification: Notification) {
