@@ -25,7 +25,6 @@ class ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegate, UI
     @IBOutlet weak var navigationBar: UINavigationBar!
     @IBOutlet weak var sessionInfoView: UIVisualEffectView!
     @IBOutlet weak var sessionInfoLabel: UILabel!
-    @IBOutlet weak var toggleInstructionsButton: RoundedButton!
     
     internal var internalState: State = .startARSession
     
@@ -214,9 +213,7 @@ class ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegate, UI
     }
     
 
-    @IBAction func toggleInstructionsButtonTapped(_ sender: Any) {
-        guard !toggleInstructionsButton.isHidden && toggleInstructionsButton.isEnabled else { return }
-    }
+
     
 
     

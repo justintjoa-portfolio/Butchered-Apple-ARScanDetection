@@ -53,34 +53,6 @@
                                     <action selector="nextButtonTapped:" destination="BV1-FR-VrT" eventType="touchUpInside" id="37x-d3-hp6"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" alpha="0.5" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MRb-bZ-YPJ" userLabel="? Button Touch Area">
-                                <rect key="frame" x="291" y="695" width="84" height="83"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="90" id="EAP-nv-62L"/>
-                                    <constraint firstAttribute="height" constant="130" id="ifq-hV-oWh"/>
-                                </constraints>
-                                <connections>
-                                    <action selector="toggleInstructionsButtonTapped:" destination="BV1-FR-VrT" eventType="touchUpInside" id="mbh-tB-lk5"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bG7-IC-Bnx" userLabel="? Button" customClass="RoundedButton" customModule="ScanningApp" customModuleProvider="target">
-                                <rect key="frame" x="959" y="683" width="45" height="45"/>
-                                <accessibility key="accessibilityConfiguration" label="Toggle instruction label"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="45" id="934-S4-2JQ"/>
-                                    <constraint firstAttribute="height" constant="45" id="Eu7-e9-p3y"/>
-                                </constraints>
-                                <state key="normal" title="?"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                        <integer key="value" value="22"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <action selector="toggleInstructionsButtonTapped:" destination="BV1-FR-VrT" eventType="touchUpInside" id="FKw-vC-XiO"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" alpha="0.5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nvw-kB-ETJ" userLabel="Left Button Touch Area">
                                 <rect key="frame" x="0.0" y="678" width="130" height="130"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -149,13 +121,10 @@
                         <gestureRecognizers/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="ky8-eY-0LO" secondAttribute="trailing" id="2rL-yM-S0T"/>
-                            <constraint firstItem="t88-em-YKH" firstAttribute="bottom" secondItem="MRb-bZ-YPJ" secondAttribute="bottom" constant="-40" id="4ua-0K-uku"/>
-                            <constraint firstItem="t88-em-YKH" firstAttribute="trailing" secondItem="bG7-IC-Bnx" secondAttribute="trailing" constant="20" id="5o9-k1-HSq"/>
                             <constraint firstItem="Emj-yh-Wao" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="OaE-RQ-EVR" secondAttribute="trailing" constant="8" symbolic="YES" id="6Ad-Wp-Qrc"/>
                             <constraint firstItem="t88-em-YKH" firstAttribute="bottom" secondItem="Emj-yh-Wao" secondAttribute="bottom" constant="40" id="6IO-iI-wwJ"/>
                             <constraint firstItem="t88-em-YKH" firstAttribute="trailing" secondItem="zK5-Be-vZh" secondAttribute="trailing" id="7rK-Q1-3FK"/>
                             <constraint firstItem="p0C-F0-p11" firstAttribute="centerX" secondItem="t88-em-YKH" secondAttribute="centerX" id="8Lt-iO-P62"/>
-                            <constraint firstItem="bG7-IC-Bnx" firstAttribute="centerY" secondItem="Emj-yh-Wao" secondAttribute="centerY" id="A5n-C9-kh3"/>
                             <constraint firstItem="ky8-eY-0LO" firstAttribute="top" secondItem="hbm-Ig-0N9" secondAttribute="top" id="AYo-ni-f8r"/>
                             <constraint firstItem="nvw-kB-ETJ" firstAttribute="leading" secondItem="t88-em-YKH" secondAttribute="leading" id="Drv-NV-JaG"/>
                             <constraint firstItem="EiA-XD-X8R" firstAttribute="top" secondItem="zK5-Be-vZh" secondAttribute="bottom" constant="24" id="FKW-pM-Or4"/>
@@ -164,7 +133,6 @@
                             <constraint firstItem="t88-em-YKH" firstAttribute="bottom" secondItem="nvw-kB-ETJ" secondAttribute="bottom" constant="-40" id="Hc6-Xc-Msf"/>
                             <constraint firstItem="Emj-yh-Wao" firstAttribute="centerX" secondItem="hbm-Ig-0N9" secondAttribute="centerX" id="IVa-T7-fq5"/>
                             <constraint firstItem="zK5-Be-vZh" firstAttribute="leading" secondItem="t88-em-YKH" secondAttribute="leading" id="NA6-05-XOo"/>
-                            <constraint firstItem="t88-em-YKH" firstAttribute="trailing" secondItem="MRb-bZ-YPJ" secondAttribute="trailing" id="NmW-HE-dfY"/>
                             <constraint firstItem="EiA-XD-X8R" firstAttribute="centerX" secondItem="t88-em-YKH" secondAttribute="centerX" id="Ug3-tj-L44"/>
                             <constraint firstItem="nsN-wC-uuj" firstAttribute="top" secondItem="hbm-Ig-0N9" secondAttribute="top" id="Vug-1D-aOj"/>
                             <constraint firstItem="nsN-wC-uuj" firstAttribute="bottom" secondItem="zK5-Be-vZh" secondAttribute="bottom" id="Zna-cx-mVq"/>
@@ -192,7 +160,6 @@
                         <outlet property="sceneView" destination="hbm-Ig-0N9" id="3MK-hv-QPJ"/>
                         <outlet property="sessionInfoLabel" destination="UrR-38-pup" id="EUV-Ee-dHk"/>
                         <outlet property="sessionInfoView" destination="EiA-XD-X8R" id="Ipb-ZM-laj"/>
-                        <outlet property="toggleInstructionsButton" destination="bG7-IC-Bnx" id="kdh-cQ-8Ym"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SZV-WD-TEh" sceneMemberID="firstResponder"/>
@@ -242,9 +209,6 @@
         </designable>
         <designable name="OaE-RQ-EVR">
             <size key="intrinsicContentSize" width="80" height="30"/>
-        </designable>
-        <designable name="bG7-IC-Bnx">
-            <size key="intrinsicContentSize" width="30" height="30"/>
         </designable>
     </designables>
     <resources>
