@@ -22,10 +22,6 @@ extension ViewController {
             startTimeOfLastMessage = Date().timeIntervalSince1970
             expirationTimeOfLastMessage = 3.0
             
-        case .limited:
-            message = "\(stateString) might not work: \(trackingState.presentationString)"
-            startTimeOfLastMessage = Date().timeIntervalSince1970
-            expirationTimeOfLastMessage = 3.0
             
         default:
             // No feedback needed when tracking is normal.

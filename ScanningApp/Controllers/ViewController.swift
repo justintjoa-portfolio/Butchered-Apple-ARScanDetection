@@ -430,11 +430,6 @@ class ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegate, UI
         if let objectAnchor = anchor as? ARObjectAnchor {
             if let testRun = self.testRun, objectAnchor.referenceObject == testRun.referenceObject {
                 testRun.successfulDetection(objectAnchor)
-                let messageText = """
-                    Object successfully detected from this angle.
-
-                    """ + testRun.statistics
-                displayMessage(messageText, expirationTime: testRun.resultDisplayDuration)
             }
         } else if state == .scanning, let planeAnchor = anchor as? ARPlaneAnchor {
             scan?.scannedObject.tryToAlignWithPlanes([planeAnchor])
