@@ -20,7 +20,6 @@ class ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegate, UI
     @IBOutlet weak var blurView: UIVisualEffectView!
     @IBOutlet weak var nextButton: RoundedButton!
     var backButton: UIBarButtonItem!
-    var mergeScanButton: UIBarButtonItem!
     @IBOutlet weak var loadModelButton: RoundedButton!
     @IBOutlet weak var navigationBar: UINavigationBar!
     @IBOutlet weak var sessionInfoView: UIVisualEffectView!
@@ -182,7 +181,6 @@ class ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegate, UI
         documentPicker.delegate = self
         
         documentPicker.modalPresentationStyle = .overCurrentContext
-        documentPicker.popoverPresentationController?.barButtonItem = mergeScanButton
         
         DispatchQueue.main.async {
             self.present(documentPicker, animated: true, completion: nil)
@@ -448,27 +446,11 @@ class ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegate, UI
             
             // Try to merge the object which was just scanned with the existing one.
             self.testRun?.referenceObject?.mergeInBackground(with: referenceObject, completion: { (mergedObject, error) in
-                let alertController = UIAlertController(title: nil, message: nil, preferredStyle: .alert)
-                
                 if let mergedObject = mergedObject {
                     self.testRun?.setReferenceObject(mergedObject, screenshot: nil)
                     self.showAlert(title: "Merge successful", message: "The other scan has been merged into this scan.",
                                    buttonTitle: "OK", showCancel: false)
                     
-                } else {
-                    print("Error: Failed to merge scans. \(error?.localizedDescription ?? "")")
-                    alertController.title = "Merge failed"
-                    let message = """
-                            Merging the other scan into the current scan failed. Please make sure
-                            that there is sufficient overlap between both scans and that the
-                            lighting environment hasn't changed drastically.
-                            Which scan do you want to use to proceed testing?
-                            """
-                    let currentScan = UIAlertAction(title: "Use Current Scan", style: .default)
-                    let otherScan = UIAlertAction(title: "Use Other Scan", style: .default) { _ in
-                        self.testRun?.setReferenceObject(referenceObject, screenshot: nil)
-                    }
-                    self.showAlert(title: "Merge failed", message: message, actions: [currentScan, otherScan])
                 }
             })
             
