@@ -1,15 +1,16 @@
-/*
-See LICENSE folder for this sample’s licensing information.
-
-Abstract:
-Main view controller for the object scanning UI.
-*/
+//
+//  ViewControllerR.swift
+//  ScanningApp
+//
+//  Created by Hendrik Tjoa on 2/15/21.
+//  Copyright © 2021 Apple. All rights reserved.
+//
 
 import UIKit
 import SceneKit
 import ARKit
 
-class ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegate, UIDocumentPickerDelegate {
+class ViewControllerRepository {
     
     static let appStateChangedNotification = Notification.Name("ApplicationStateChanged")
     static let appStateUserInfoKey = "AppState"
@@ -55,61 +56,7 @@ class ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegate, UI
     }
     
 
-    
-    // MARK: - Application Lifecycle
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        ViewController.instance = self
-    }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        sceneView.session.pause()
-    }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        sceneView.delegate = self
-        sceneView.session.delegate = self
-        
-        // Prevent the screen from being dimmed after a while.
-        UIApplication.shared.isIdleTimerDisabled = true
-        
-        let notificationCenter = NotificationCenter.default
-        notificationCenter.addObserver(self, selector: #selector(scanningStateChanged), name: Scan.stateChangedNotification, object: nil)
-        notificationCenter.addObserver(self, selector: #selector(ghostBoundingBoxWasCreated),
-                                       name: ScannedObject.ghostBoundingBoxCreatedNotification, object: nil)
-        notificationCenter.addObserver(self, selector: #selector(ghostBoundingBoxWasRemoved),
-                                       name: ScannedObject.ghostBoundingBoxRemovedNotification, object: nil)
-        notificationCenter.addObserver(self, selector: #selector(boundingBoxWasCreated),
-                                       name: ScannedObject.boundingBoxCreatedNotification, object: nil)
-        notificationCenter.addObserver(self, selector: #selector(scanPercentageChanged),
-                                       name: BoundingBox.scanPercentageChangedNotification, object: nil)
 
-        notificationCenter.addObserver(self, selector: #selector(objectOriginPositionChanged(_:)),
-                                       name: ObjectOrigin.positionChangedNotification, object: nil)
-        notificationCenter.addObserver(self, selector: #selector(displayWarningIfInLowPowerMode),
-                                       name: Notification.Name.NSProcessInfoPowerStateDidChange, object: nil)
-        
-        setupNavigationBar()
-        
-        displayWarningIfInLowPowerMode()
-        
-        // Make sure the application launches in .startARSession state.
-        // Entering this state will run() the ARSession.
-        state = .startARSession
-    }
-    
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-        
-        // Store the screen center location after the view's bounds did change,
-        // so it can be retrieved later from outside the main thread.
-        screenCenter = sceneView.center
-    }
-    
     // MARK: - UI Event Handling
     
     @IBAction func restartButtonTapped(_ sender: Any) {
@@ -171,35 +118,27 @@ class ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegate, UI
         })
         alertController.addAction(UIAlertAction(title: "Cancel", style: .cancel))
         
-        DispatchQueue.main.async {
-            self.present(alertController, animated: true, completion: nil)
-        }
+     
     }
     
     func showFilePickerForLoadingScan() {
         let documentPicker = UIDocumentPickerViewController(documentTypes: ["com.apple.arobject"], in: .import)
-        documentPicker.delegate = self
         
         documentPicker.modalPresentationStyle = .overCurrentContext
         
-        DispatchQueue.main.async {
-            self.present(documentPicker, animated: true, completion: nil)
-        }
+  
     }
     
     @IBAction func loadModelButtonTapped(_ sender: Any) {
         guard !loadModelButton.isHidden && loadModelButton.isEnabled else { return }
         
         let documentPicker = UIDocumentPickerViewController(documentTypes: ["com.pixar.universal-scene-description-mobile"], in: .import)
-        documentPicker.delegate = self
         
         documentPicker.modalPresentationStyle = .overCurrentContext
         documentPicker.popoverPresentationController?.sourceView = self.loadModelButton
         documentPicker.popoverPresentationController?.sourceRect = self.loadModelButton.bounds
         
-        DispatchQueue.main.async {
-            self.present(documentPicker, animated: true, completion: nil)
-        }
+   
     }
     
     @IBAction func leftButtonTouchAreaTapped(_ sender: Any) {
@@ -230,25 +169,9 @@ class ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegate, UI
         if showCancel {
             actions.append(UIAlertAction(title: "Cancel", style: .cancel))
         }
-        self.showAlert(title: title, message: message, actions: actions)
     }
     
-    func showAlert(title: String, message: String, actions: [UIAlertAction]) {
-        let showAlertBlock = {
-            let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
-            DispatchQueue.main.async {
-                self.present(alertController, animated: true, completion: nil)
-            }
-        }
-        
-        if presentedViewController != nil {
-            dismiss(animated: true) {
-                showAlertBlock()
-            }
-        } else {
-            showAlertBlock()
-        }
-    }
+
     
     func testObjectDetection() {
         // In case an object for testing has been received, use it right away...
@@ -480,7 +403,6 @@ class ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegate, UI
                 self.referenceObjectToTest = receivedReferenceObject
                 self.state = .testing
             }
-            self.showAlert(title: title, message: message, actions: [merge, test])
             
         } catch {
             self.showAlert(title: "File invalid", message: "Loading the scanned object file failed.",
@@ -525,11 +447,5 @@ class ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegate, UI
         }
     }
     
-    override var shouldAutorotate: Bool {
-        // Lock UI rotation after starting a scan
-        if let scan = scan, scan.state != .ready {
-            return false
-        }
-        return true
-    }
+
 }

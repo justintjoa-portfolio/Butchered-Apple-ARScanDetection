@@ -1,15 +1,16 @@
-/*
-See LICENSE folder for this sample’s licensing information.
-
-Abstract:
-Management of the UI steps for scanning an object in the main view controller.
-*/
+//
+//  ApplicationStateR.swift
+//  ScanningApp
+//
+//  Created by Hendrik Tjoa on 2/15/21.
+//  Copyright © 2021 Apple. All rights reserved.
+//
 
 import Foundation
 import ARKit
 import SceneKit
 
-extension ViewController {
+extension ViewControllerRepository {
     
     enum State {
         case startARSession
@@ -17,8 +18,6 @@ extension ViewController {
         case scanning
         case testing
     }
-    
-    
     
     /// - Tag: ARObjectScanningConfiguration
     // The current state the application is in
@@ -249,3 +248,4 @@ extension ViewController {
         }
     }
 }
+

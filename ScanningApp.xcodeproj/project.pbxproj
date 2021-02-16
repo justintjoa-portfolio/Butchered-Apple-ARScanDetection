@@ -25,6 +25,13 @@
 		39D6E980207A8956002CF536 /* DetectedPointCloud.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39D6E97F207A8956002CF536 /* DetectedPointCloud.swift */; };
 		39D6E984207B1D05002CF536 /* ViewController+ApplicationState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39D6E983207B1D05002CF536 /* ViewController+ApplicationState.swift */; };
 		39E6F85A200EE27800B278CA /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39E6F859200EE27800B278CA /* Utilities.swift */; };
+		5232B50325DB7E8A0004AFD1 /* ViewControllerR.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5232B50225DB7E8A0004AFD1 /* ViewControllerR.swift */; };
+		5232B50625DB7EAB0004AFD1 /* GesturesR.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5232B50525DB7EAB0004AFD1 /* GesturesR.swift */; };
+		5232B50925DB7EB50004AFD1 /* ApplicationStateR.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5232B50825DB7EB50004AFD1 /* ApplicationStateR.swift */; };
+		5232B50C25DB7EC00004AFD1 /* NavigationBarR.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5232B50B25DB7EC00004AFD1 /* NavigationBarR.swift */; };
+		5232B51025DB7ED40004AFD1 /* SessionR.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5232B50F25DB7ED40004AFD1 /* SessionR.swift */; };
+		5232B51625DB7EE70004AFD1 /* TestRunR.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5232B51525DB7EE70004AFD1 /* TestRunR.swift */; };
+		5232B51925DB80450004AFD1 /* ScanR.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5232B51825DB80450004AFD1 /* ScanR.swift */; };
 		C42056AE20C75C9D003754C1 /* Snapping.swift in Sources */ = {isa = PBXBuildFile; fileRef = C42056AD20C75C9D003754C1 /* Snapping.swift */; };
 		C4543844207F38460016097A /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = C4543843207F38460016097A /* art.scnassets */; };
 		C45BF9CA208E11420070CB19 /* ViewController+NavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = C45BF9C9208E11420070CB19 /* ViewController+NavigationBar.swift */; };
@@ -64,6 +71,13 @@
 		39D6E97F207A8956002CF536 /* DetectedPointCloud.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetectedPointCloud.swift; sourceTree = "<group>"; };
 		39D6E983207B1D05002CF536 /* ViewController+ApplicationState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+ApplicationState.swift"; sourceTree = "<group>"; };
 		39E6F859200EE27800B278CA /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
+		5232B50225DB7E8A0004AFD1 /* ViewControllerR.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerR.swift; sourceTree = "<group>"; };
+		5232B50525DB7EAB0004AFD1 /* GesturesR.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GesturesR.swift; sourceTree = "<group>"; };
+		5232B50825DB7EB50004AFD1 /* ApplicationStateR.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationStateR.swift; sourceTree = "<group>"; };
+		5232B50B25DB7EC00004AFD1 /* NavigationBarR.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarR.swift; sourceTree = "<group>"; };
+		5232B50F25DB7ED40004AFD1 /* SessionR.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionR.swift; sourceTree = "<group>"; };
+		5232B51525DB7EE70004AFD1 /* TestRunR.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestRunR.swift; sourceTree = "<group>"; };
+		5232B51825DB80450004AFD1 /* ScanR.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanR.swift; sourceTree = "<group>"; };
 		C42056AD20C75C9D003754C1 /* Snapping.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Snapping.swift; sourceTree = "<group>"; };
 		C4543843207F38460016097A /* art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; name = art.scnassets; path = ScanningApp/art.scnassets; sourceTree = "<group>"; };
 		C45BF9C9208E11420070CB19 /* ViewController+NavigationBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ViewController+NavigationBar.swift"; sourceTree = "<group>"; };
@@ -152,6 +166,8 @@
 		395C993B200707A30025413C = {
 			isa = PBXGroup;
 			children = (
+				5232B50125DB7E690004AFD1 /* Repositories */,
+				5232B50025DB7E610004AFD1 /* src */,
 				1119C68220AA135700DDFCC2 /* README.md */,
 				C479BF30201F84D70030C57A /* Controllers */,
 				C479BF31201F84EB0030C57A /* Views */,
@@ -177,10 +193,31 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		C479BF30201F84D70030C57A /* Controllers */ = {
+		5232B50025DB7E610004AFD1 /* src */ = {
 			isa = PBXGroup;
 			children = (
 				395C9947200707A30025413C /* AppDelegate.swift */,
+			);
+			path = src;
+			sourceTree = "<group>";
+		};
+		5232B50125DB7E690004AFD1 /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				5232B50225DB7E8A0004AFD1 /* ViewControllerR.swift */,
+				5232B50525DB7EAB0004AFD1 /* GesturesR.swift */,
+				5232B50825DB7EB50004AFD1 /* ApplicationStateR.swift */,
+				5232B50B25DB7EC00004AFD1 /* NavigationBarR.swift */,
+				5232B50F25DB7ED40004AFD1 /* SessionR.swift */,
+				5232B51525DB7EE70004AFD1 /* TestRunR.swift */,
+				5232B51825DB80450004AFD1 /* ScanR.swift */,
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
+		C479BF30201F84D70030C57A /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
 				395C994B200707A30025413C /* ViewController.swift */,
 				C479BF2D201F2C790030C57A /* ViewController+Gestures.swift */,
 				39D6E983207B1D05002CF536 /* ViewController+ApplicationState.swift */,
@@ -290,29 +327,36 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5232B51625DB7EE70004AFD1 /* TestRunR.swift in Sources */,
 				11D4F6C120A1927700892189 /* Main.storyboard in Sources */,
 				11D4F6C020A1927700892189 /* Assets.xcassets in Sources */,
 				11D4F6BF20A1927700892189 /* LaunchScreen.storyboard in Sources */,
 				C46B563B20173523001C41CE /* ARCameraTrackingState.swift in Sources */,
 				39D6E980207A8956002CF536 /* DetectedPointCloud.swift in Sources */,
 				39E6F85A200EE27800B278CA /* Utilities.swift in Sources */,
+				5232B51925DB80450004AFD1 /* ScanR.swift in Sources */,
 				C49D034020A086D2003D21D7 /* ThresholdRotationGestureRecognizer.swift in Sources */,
+				5232B50325DB7E8A0004AFD1 /* ViewControllerR.swift in Sources */,
 				39D6E977207A8878002CF536 /* TestRun.swift in Sources */,
 				C45BF9CA208E11420070CB19 /* ViewController+NavigationBar.swift in Sources */,
 				C47D1E1720B3763C00DC3FDE /* ViewController+SessionInfo.swift in Sources */,
 				390033FA206F15F700C61E5D /* Scan.swift in Sources */,
 				C47FEA4E20888B83008C1749 /* ThresholdPinchGestureRecognizer.swift in Sources */,
 				C47CE835207794880011A27B /* ObjectOriginAxis.swift in Sources */,
+				5232B50625DB7EAB0004AFD1 /* GesturesR.swift in Sources */,
 				3947D3EA207543D500BDBE95 /* ScannedObject.swift in Sources */,
 				C49D033A20A07F34003D21D7 /* ThresholdPanGestureRecognizer.swift in Sources */,
 				C46B56342015D997001C41CE /* BoundingBox.swift in Sources */,
 				39435E522072FAD9009BD1A8 /* DetectedObject.swift in Sources */,
 				C42056AE20C75C9D003754C1 /* Snapping.swift in Sources */,
 				390033F8206F149100C61E5D /* BoundingBoxSide.swift in Sources */,
+				5232B50925DB7EB50004AFD1 /* ApplicationStateR.swift in Sources */,
 				39778216209A704B003AA644 /* DetectedBoundingBox.swift in Sources */,
 				390033E7206EE9F100C61E5D /* ObjectOrigin.swift in Sources */,
+				5232B50C25DB7EC00004AFD1 /* NavigationBarR.swift in Sources */,
 				C4A938C5208799D3008D5D13 /* Tile.swift in Sources */,
 				C479BF2E201F2C790030C57A /* ViewController+Gestures.swift in Sources */,
+				5232B51025DB7ED40004AFD1 /* SessionR.swift in Sources */,
 				395C994C200707A30025413C /* ViewController.swift in Sources */,
 				395C9948200707A30025413C /* AppDelegate.swift in Sources */,
 				39D6E984207B1D05002CF536 /* ViewController+ApplicationState.swift in Sources */,
