@@ -14,16 +14,8 @@ class ViewControllerRepository {
     static let appStateChangedNotification = Notification.Name("ApplicationStateChanged")
     static let appStateUserInfoKey = "AppState"
     
-    static var instance: ViewController?
     
-    @IBOutlet weak var sceneView: ARSCNView!
-    @IBOutlet weak var blurView: UIVisualEffectView!
-    @IBOutlet weak var nextButton: RoundedButton!
-    var backButton: UIBarButtonItem!
-    @IBOutlet weak var loadModelButton: RoundedButton!
-    @IBOutlet weak var navigationBar: UINavigationBar!
-    @IBOutlet weak var sessionInfoView: UIVisualEffectView!
-    @IBOutlet weak var sessionInfoLabel: UILabel!
+    var sceneView: ARSCNView!
     
     internal var internalState: State = .startARSession
     
@@ -62,7 +54,7 @@ class ViewControllerRepository {
     
     // MARK: - UI Event Handling
     
-    @IBAction func restartButtonTapped(_ sender: Any) {
+    func restartButtonTapped(_ sender: Any) {
         if let scan = scan, scan.boundingBoxExists {
             let title = "Start over?"
             let message = "Discard the current scan and start over?"
@@ -91,16 +83,15 @@ class ViewControllerRepository {
         }
     }
     
-    @IBAction func previousButtonTapped(_ sender: Any) {
+    func previousButtonTapped(_ sender: Any) {
         switchToPreviousState()
     }
     
-    @IBAction func nextButtonTapped(_ sender: Any) {
-        guard !nextButton.isHidden && nextButton.isEnabled else { return }
+    func nextButtonTapped(_ sender: Any) {
         switchToNextState()
     }
     
-    @IBAction func addScanButtonTapped(_ sender: Any) {
+    func addScanButtonTapped(_ sender: Any) {
         guard state == .testing else { return }
 
         let title = "Merge another scan?"
@@ -125,25 +116,15 @@ class ViewControllerRepository {
     
 
     
-    @IBAction func loadModelButtonTapped(_ sender: Any) {
-        guard !loadModelButton.isHidden && loadModelButton.isEnabled else { return }
+    func loadModelButtonTapped(_ sender: Any) {
         
         let documentPicker = UIDocumentPickerViewController(documentTypes: ["com.pixar.universal-scene-description-mobile"], in: .import)
         
         documentPicker.modalPresentationStyle = .overCurrentContext
-        documentPicker.popoverPresentationController?.sourceView = self.loadModelButton
-        documentPicker.popoverPresentationController?.sourceRect = self.loadModelButton.bounds
         
     
     }
-    
-    @IBAction func leftButtonTouchAreaTapped(_ sender: Any) {
-        // A tap in the extended hit area on the lower left should cause a tap
-        //  on the button that is currently visible at that location.
-        if !loadModelButton.isHidden {
-            loadModelButtonTapped(self)
-        }
-    }
+  
     
 
 
@@ -423,9 +404,7 @@ class ViewControllerRepository {
             switchToNextState()
             return
         }
-        DispatchQueue.main.async {
-            self.setNavigationBarTitle("Scan (\(percentage)%)")
-        }
+
     }
     
  

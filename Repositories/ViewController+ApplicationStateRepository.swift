@@ -70,13 +70,8 @@ extension ViewControllerRepository {
                 scan = nil
                 testRun = nil
                 modelURL = nil
-                self.setNavigationBarTitle("")
-                showBackButton(false)
-                nextButton.isEnabled = false
-                loadModelButton.isHidden = true
                 
                 // Make sure the SCNScene is cleared of any SCNNodes from previous scans.
-                sceneView.scene = SCNScene()
                 
                 let configuration = ARObjectScanningConfiguration()
                 configuration.planeDetection = .horizontal
@@ -87,11 +82,6 @@ extension ViewControllerRepository {
                 print("State: Not ready to scan")
                 scan = nil
                 testRun = nil
-                self.setNavigationBarTitle("")
-                loadModelButton.isHidden = true
-                showBackButton(false)
-                nextButton.isEnabled = false
-                nextButton.setTitle("Next", for: [])
                 cancelMaxScanTimeTimer()
             case .scanning:
                 print("State: Scanning")
@@ -104,10 +94,6 @@ extension ViewControllerRepository {
                 startMaxScanTimeTimer()
             case .testing:
                 print("State: Testing")
-                self.setNavigationBarTitle("Test")
-                loadModelButton.isHidden = true
-                showMergeScanButton()
-                nextButton.isEnabled = false
         
                 
                 testRun = TestRun(sceneView: sceneView)
@@ -130,42 +116,15 @@ extension ViewControllerRepository {
             switch scanState {
             case .ready:
                 print("State: Ready to scan")
-                self.setNavigationBarTitle("Ready to scan")
-                self.showBackButton(false)
-                self.nextButton.setTitle("Next", for: [])
-                self.loadModelButton.isHidden = true
-                if scan.ghostBoundingBoxExists {
-                    self.nextButton.isEnabled = true
-                } else {
-                    self.nextButton.isEnabled = false
-                }
             case .defineBoundingBox:
                 print("State: Define bounding box")
 
-                self.setNavigationBarTitle("Define bounding box")
-                self.showBackButton(true)
-                self.nextButton.isEnabled = scan.boundingBoxExists
-                self.loadModelButton.isHidden = true
-                self.nextButton.setTitle("Scan", for: [])
             case .scanning:
-                if let boundingBox = scan.scannedObject.boundingBox {
-                    self.setNavigationBarTitle("Scan (\(boundingBox.progressPercentage)%)")
-                } else {
-                    self.setNavigationBarTitle("Scan 0%")
-                }
-                self.showBackButton(true)
-                self.nextButton.isEnabled = true
-                self.loadModelButton.isHidden = true
-                self.nextButton.setTitle("Finish", for: [])
-                // Disable plane detection (even if no plane has been found yet at this time) for performance reasons.
+            
                 self.sceneView.stopPlaneDetection()
             case .adjustingOrigin:
                 print("State: Adjusting Origin")
-                self.setNavigationBarTitle("Adjust origin")
-                self.showBackButton(true)
-                self.nextButton.isEnabled = true
-                self.loadModelButton.isHidden = false
-                self.nextButton.setTitle("Test", for: [])
+            
             }
         }
     }
@@ -220,30 +179,7 @@ extension ViewControllerRepository {
         }
     }
     
-    @objc
-    func ghostBoundingBoxWasCreated(_ notification: Notification) {
-        if let scan = scan, scan.state == .ready {
-            DispatchQueue.main.async {
-                self.nextButton.isEnabled = true
-            }
-        }
-    }
-    
-    @objc
-    func ghostBoundingBoxWasRemoved(_ notification: Notification) {
-        if let scan = scan, scan.state == .ready {
-            DispatchQueue.main.async {
-                self.nextButton.isEnabled = false
-            }
-        }
-    }
-    
-    @objc
-    func boundingBoxWasCreated(_ notification: Notification) {
-        if let scan = scan, scan.state == .defineBoundingBox {
-            DispatchQueue.main.async {
-                self.nextButton.isEnabled = true
-            }
-        }
-    }
+
+
+
 }
