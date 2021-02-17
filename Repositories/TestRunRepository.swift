@@ -9,7 +9,7 @@ import Foundation
 import ARKit
 
 // This class represents a test run of a scanned object.
-class TestRun {
+class TestRunRepository {
     
     // The ARReferenceObject to be tested in this run.
     var referenceObject: ARReferenceObject?

@@ -8,7 +8,7 @@ Navigation bar management for the main view controller.
 import Foundation
 import UIKit
 
-extension ViewController {
+extension ViewControllerRepository {
     
     func setupNavigationBar() {
         backButton = UIBarButtonItem(title: "Back", style: .plain, target: self,

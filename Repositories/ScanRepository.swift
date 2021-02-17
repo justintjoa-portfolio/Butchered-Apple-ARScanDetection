@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 import ARKit
 
-class Scan {
+class ScanRepository {
     
     static let stateChangedNotification = Notification.Name("ScanningStateChanged")
     static let stateUserInfoKey = "ScanState"

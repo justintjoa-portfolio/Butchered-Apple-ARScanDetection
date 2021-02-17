@@ -9,7 +9,7 @@ import Foundation
 import ARKit
 import SceneKit
 
-extension ViewController {
+extension ViewControllerRepository {
     
     enum State {
         case startARSession
