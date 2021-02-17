@@ -25,6 +25,13 @@
 		39D6E980207A8956002CF536 /* DetectedPointCloud.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39D6E97F207A8956002CF536 /* DetectedPointCloud.swift */; };
 		39D6E984207B1D05002CF536 /* ViewController+ApplicationState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39D6E983207B1D05002CF536 /* ViewController+ApplicationState.swift */; };
 		39E6F85A200EE27800B278CA /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39E6F859200EE27800B278CA /* Utilities.swift */; };
+		5232B54F25DCF6140004AFD1 /* ViewController+GesturesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5232B54825DCF6140004AFD1 /* ViewController+GesturesRepository.swift */; };
+		5232B55025DCF6140004AFD1 /* ViewControllerRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5232B54925DCF6140004AFD1 /* ViewControllerRepository.swift */; };
+		5232B55125DCF6140004AFD1 /* ViewController+SessionInfoRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5232B54A25DCF6140004AFD1 /* ViewController+SessionInfoRepository.swift */; };
+		5232B55225DCF6140004AFD1 /* ViewController+ApplicationStateRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5232B54B25DCF6140004AFD1 /* ViewController+ApplicationStateRepository.swift */; };
+		5232B55325DCF6140004AFD1 /* ViewController+NavigationBarRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5232B54C25DCF6140004AFD1 /* ViewController+NavigationBarRepository.swift */; };
+		5232B55425DCF6140004AFD1 /* ScanRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5232B54D25DCF6140004AFD1 /* ScanRepository.swift */; };
+		5232B55525DCF6140004AFD1 /* TestRunRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5232B54E25DCF6140004AFD1 /* TestRunRepository.swift */; };
 		C42056AE20C75C9D003754C1 /* Snapping.swift in Sources */ = {isa = PBXBuildFile; fileRef = C42056AD20C75C9D003754C1 /* Snapping.swift */; };
 		C4543844207F38460016097A /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = C4543843207F38460016097A /* art.scnassets */; };
 		C45BF9CA208E11420070CB19 /* ViewController+NavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = C45BF9C9208E11420070CB19 /* ViewController+NavigationBar.swift */; };
@@ -64,6 +71,13 @@
 		39D6E97F207A8956002CF536 /* DetectedPointCloud.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetectedPointCloud.swift; sourceTree = "<group>"; };
 		39D6E983207B1D05002CF536 /* ViewController+ApplicationState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+ApplicationState.swift"; sourceTree = "<group>"; };
 		39E6F859200EE27800B278CA /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
+		5232B54825DCF6140004AFD1 /* ViewController+GesturesRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ViewController+GesturesRepository.swift"; sourceTree = "<group>"; };
+		5232B54925DCF6140004AFD1 /* ViewControllerRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerRepository.swift; sourceTree = "<group>"; };
+		5232B54A25DCF6140004AFD1 /* ViewController+SessionInfoRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ViewController+SessionInfoRepository.swift"; sourceTree = "<group>"; };
+		5232B54B25DCF6140004AFD1 /* ViewController+ApplicationStateRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ViewController+ApplicationStateRepository.swift"; sourceTree = "<group>"; };
+		5232B54C25DCF6140004AFD1 /* ViewController+NavigationBarRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ViewController+NavigationBarRepository.swift"; sourceTree = "<group>"; };
+		5232B54D25DCF6140004AFD1 /* ScanRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScanRepository.swift; sourceTree = "<group>"; };
+		5232B54E25DCF6140004AFD1 /* TestRunRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestRunRepository.swift; sourceTree = "<group>"; };
 		C42056AD20C75C9D003754C1 /* Snapping.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Snapping.swift; sourceTree = "<group>"; };
 		C4543843207F38460016097A /* art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; name = art.scnassets; path = ScanningApp/art.scnassets; sourceTree = "<group>"; };
 		C45BF9C9208E11420070CB19 /* ViewController+NavigationBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ViewController+NavigationBar.swift"; sourceTree = "<group>"; };
@@ -152,6 +166,8 @@
 		395C993B200707A30025413C = {
 			isa = PBXGroup;
 			children = (
+				5232B54425DCF5240004AFD1 /* src */,
+				5232B53025DCF4590004AFD1 /* Repositories */,
 				1119C68220AA135700DDFCC2 /* README.md */,
 				C479BF30201F84D70030C57A /* Controllers */,
 				C479BF31201F84EB0030C57A /* Views */,
@@ -177,10 +193,31 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		C479BF30201F84D70030C57A /* Controllers */ = {
+		5232B53025DCF4590004AFD1 /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				5232B54D25DCF6140004AFD1 /* ScanRepository.swift */,
+				5232B54E25DCF6140004AFD1 /* TestRunRepository.swift */,
+				5232B54B25DCF6140004AFD1 /* ViewController+ApplicationStateRepository.swift */,
+				5232B54825DCF6140004AFD1 /* ViewController+GesturesRepository.swift */,
+				5232B54C25DCF6140004AFD1 /* ViewController+NavigationBarRepository.swift */,
+				5232B54A25DCF6140004AFD1 /* ViewController+SessionInfoRepository.swift */,
+				5232B54925DCF6140004AFD1 /* ViewControllerRepository.swift */,
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
+		5232B54425DCF5240004AFD1 /* src */ = {
 			isa = PBXGroup;
 			children = (
 				395C9947200707A30025413C /* AppDelegate.swift */,
+			);
+			path = src;
+			sourceTree = "<group>";
+		};
+		C479BF30201F84D70030C57A /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
 				395C994B200707A30025413C /* ViewController.swift */,
 				C479BF2D201F2C790030C57A /* ViewController+Gestures.swift */,
 				39D6E983207B1D05002CF536 /* ViewController+ApplicationState.swift */,
@@ -292,13 +329,18 @@
 			files = (
 				11D4F6C120A1927700892189 /* Main.storyboard in Sources */,
 				11D4F6C020A1927700892189 /* Assets.xcassets in Sources */,
+				5232B54F25DCF6140004AFD1 /* ViewController+GesturesRepository.swift in Sources */,
 				11D4F6BF20A1927700892189 /* LaunchScreen.storyboard in Sources */,
 				C46B563B20173523001C41CE /* ARCameraTrackingState.swift in Sources */,
+				5232B55125DCF6140004AFD1 /* ViewController+SessionInfoRepository.swift in Sources */,
+				5232B55325DCF6140004AFD1 /* ViewController+NavigationBarRepository.swift in Sources */,
+				5232B55525DCF6140004AFD1 /* TestRunRepository.swift in Sources */,
 				39D6E980207A8956002CF536 /* DetectedPointCloud.swift in Sources */,
 				39E6F85A200EE27800B278CA /* Utilities.swift in Sources */,
 				C49D034020A086D2003D21D7 /* ThresholdRotationGestureRecognizer.swift in Sources */,
 				39D6E977207A8878002CF536 /* TestRun.swift in Sources */,
 				C45BF9CA208E11420070CB19 /* ViewController+NavigationBar.swift in Sources */,
+				5232B55425DCF6140004AFD1 /* ScanRepository.swift in Sources */,
 				C47D1E1720B3763C00DC3FDE /* ViewController+SessionInfo.swift in Sources */,
 				390033FA206F15F700C61E5D /* Scan.swift in Sources */,
 				C47FEA4E20888B83008C1749 /* ThresholdPinchGestureRecognizer.swift in Sources */,
@@ -307,12 +349,14 @@
 				C49D033A20A07F34003D21D7 /* ThresholdPanGestureRecognizer.swift in Sources */,
 				C46B56342015D997001C41CE /* BoundingBox.swift in Sources */,
 				39435E522072FAD9009BD1A8 /* DetectedObject.swift in Sources */,
+				5232B55225DCF6140004AFD1 /* ViewController+ApplicationStateRepository.swift in Sources */,
 				C42056AE20C75C9D003754C1 /* Snapping.swift in Sources */,
 				390033F8206F149100C61E5D /* BoundingBoxSide.swift in Sources */,
 				39778216209A704B003AA644 /* DetectedBoundingBox.swift in Sources */,
 				390033E7206EE9F100C61E5D /* ObjectOrigin.swift in Sources */,
 				C4A938C5208799D3008D5D13 /* Tile.swift in Sources */,
 				C479BF2E201F2C790030C57A /* ViewController+Gestures.swift in Sources */,
+				5232B55025DCF6140004AFD1 /* ViewControllerRepository.swift in Sources */,
 				395C994C200707A30025413C /* ViewController.swift in Sources */,
 				395C9948200707A30025413C /* AppDelegate.swift in Sources */,
 				39D6E984207B1D05002CF536 /* ViewController+ApplicationState.swift in Sources */,
