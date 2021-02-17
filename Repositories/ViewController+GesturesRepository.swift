@@ -10,35 +10,35 @@ import SceneKit
 
 extension ViewControllerRepository {
         
-    @IBAction func didTap(_ gesture: UITapGestureRecognizer) {
+    func didTap(_ gesture: UITapGestureRecognizer) {
         if state == .scanning {
             scan?.didTap(gesture)
         }
         
     }
     
-    @IBAction func didOneFingerPan(_ gesture: UIPanGestureRecognizer) {
+    func didOneFingerPan(_ gesture: UIPanGestureRecognizer) {
         if state == .scanning {
             scan?.didOneFingerPan(gesture)
         }
         
     }
     
-    @IBAction func didTwoFingerPan(_ gesture: ThresholdPanGestureRecognizer) {
+    func didTwoFingerPan(_ gesture: ThresholdPanGestureRecognizer) {
         if state == .scanning {
             scan?.didTwoFingerPan(gesture)
         }
         
     }
     
-    @IBAction func didRotate(_ gesture: ThresholdRotationGestureRecognizer) {
+    func didRotate(_ gesture: ThresholdRotationGestureRecognizer) {
         if state == .scanning {
             scan?.didRotate(gesture)
         }
 
     }
     
-    @IBAction func didLongPress(_ gesture: UILongPressGestureRecognizer) {
+    func didLongPress(_ gesture: UILongPressGestureRecognizer) {
         if state == .scanning {
             scan?.didLongPress(gesture)
         }
@@ -46,7 +46,7 @@ extension ViewControllerRepository {
 
     }
     
-    @IBAction func didPinch(_ gesture: ThresholdPinchGestureRecognizer) {
+    func didPinch(_ gesture: ThresholdPinchGestureRecognizer) {
         if state == .scanning {
             scan?.didPinch(gesture)
         }

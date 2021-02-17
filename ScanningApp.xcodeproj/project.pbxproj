@@ -29,7 +29,6 @@
 		5232B55025DCF6140004AFD1 /* ViewControllerRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5232B54925DCF6140004AFD1 /* ViewControllerRepository.swift */; };
 		5232B55125DCF6140004AFD1 /* ViewController+SessionInfoRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5232B54A25DCF6140004AFD1 /* ViewController+SessionInfoRepository.swift */; };
 		5232B55225DCF6140004AFD1 /* ViewController+ApplicationStateRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5232B54B25DCF6140004AFD1 /* ViewController+ApplicationStateRepository.swift */; };
-		5232B55325DCF6140004AFD1 /* ViewController+NavigationBarRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5232B54C25DCF6140004AFD1 /* ViewController+NavigationBarRepository.swift */; };
 		5232B55425DCF6140004AFD1 /* ScanRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5232B54D25DCF6140004AFD1 /* ScanRepository.swift */; };
 		5232B55525DCF6140004AFD1 /* TestRunRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5232B54E25DCF6140004AFD1 /* TestRunRepository.swift */; };
 		C42056AE20C75C9D003754C1 /* Snapping.swift in Sources */ = {isa = PBXBuildFile; fileRef = C42056AD20C75C9D003754C1 /* Snapping.swift */; };
@@ -75,7 +74,6 @@
 		5232B54925DCF6140004AFD1 /* ViewControllerRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerRepository.swift; sourceTree = "<group>"; };
 		5232B54A25DCF6140004AFD1 /* ViewController+SessionInfoRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ViewController+SessionInfoRepository.swift"; sourceTree = "<group>"; };
 		5232B54B25DCF6140004AFD1 /* ViewController+ApplicationStateRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ViewController+ApplicationStateRepository.swift"; sourceTree = "<group>"; };
-		5232B54C25DCF6140004AFD1 /* ViewController+NavigationBarRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ViewController+NavigationBarRepository.swift"; sourceTree = "<group>"; };
 		5232B54D25DCF6140004AFD1 /* ScanRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScanRepository.swift; sourceTree = "<group>"; };
 		5232B54E25DCF6140004AFD1 /* TestRunRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestRunRepository.swift; sourceTree = "<group>"; };
 		C42056AD20C75C9D003754C1 /* Snapping.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Snapping.swift; sourceTree = "<group>"; };
@@ -200,7 +198,6 @@
 				5232B54E25DCF6140004AFD1 /* TestRunRepository.swift */,
 				5232B54B25DCF6140004AFD1 /* ViewController+ApplicationStateRepository.swift */,
 				5232B54825DCF6140004AFD1 /* ViewController+GesturesRepository.swift */,
-				5232B54C25DCF6140004AFD1 /* ViewController+NavigationBarRepository.swift */,
 				5232B54A25DCF6140004AFD1 /* ViewController+SessionInfoRepository.swift */,
 				5232B54925DCF6140004AFD1 /* ViewControllerRepository.swift */,
 			);
@@ -333,7 +330,6 @@
 				11D4F6BF20A1927700892189 /* LaunchScreen.storyboard in Sources */,
 				C46B563B20173523001C41CE /* ARCameraTrackingState.swift in Sources */,
 				5232B55125DCF6140004AFD1 /* ViewController+SessionInfoRepository.swift in Sources */,
-				5232B55325DCF6140004AFD1 /* ViewController+NavigationBarRepository.swift in Sources */,
 				5232B55525DCF6140004AFD1 /* TestRunRepository.swift in Sources */,
 				39D6E980207A8956002CF536 /* DetectedPointCloud.swift in Sources */,
 				39E6F85A200EE27800B278CA /* Utilities.swift in Sources */,
